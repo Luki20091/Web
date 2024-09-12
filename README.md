@@ -1,4 +1,7 @@
 # Web
+**Zadania 06.09.2024**: 
+- [Zad 3](https://luki20091.github.io/Web/06.09.2024/zad3.html)
+
 **Zadania 11.09.2024**: 
 - [Zad 1](https://luki20091.github.io/Web/11.09.2024/zad1.html)
 - [Zad 2](https://luki20091.github.io/Web/11.09.2024/zad2.html)
