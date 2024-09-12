@@ -1,6 +1,4 @@
 # Web - szkolne zadania/projekty
-**[Strona główna](https://luki20091.github.io/Web)**
-
 **Zadania 06.09.2024**: 
 - [Zad 3](https://luki20091.github.io/Web/06.09.2024/zad3.html)
 
