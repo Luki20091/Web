@@ -48,5 +48,10 @@ h2 {
 
 
 .container {
-    margin-top: 50px;
+    margin-top: 50px!important;
+}
+
+
+.container > .row {
+    margin-top: -20px!important;
 }
