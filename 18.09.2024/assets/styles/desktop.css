@@ -1,0 +1,41 @@
+
+
+body {
+    position: relative;
+}
+
+
+.navbar-collapse {
+    display: flex !important;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    align-content: center;
+    flex-wrap: nowrap;
+}
+
+
+h2 {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+
+
+
+.col-sm-3 {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+
+.container {
+    padding-top: 70px;
+}
+
