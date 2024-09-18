@@ -1,6 +1,7 @@
 # Web - szkolne zadania/projekty
-**Zadania 06.09.2024**: 
-- [Zad 3](https://luki20091.github.io/Web/06.09.2024/zad3.html)
+
+**Projekt 13.09.2024**: 
+- [Projekt 1](https://luki20091.github.io/Web/13.09.2024/projekt1.html)
 
 **Zadania 11.09.2024**: 
 - [Zad 1](https://luki20091.github.io/Web/11.09.2024/zad1.html)
@@ -14,6 +15,5 @@
 - [Zad 11](https://luki20091.github.io/Web/11.09.2024/zad11.html)
 - [Zad 12](https://luki20091.github.io/Web/11.09.2024/zad12.html)
 
-
-**Projekt 13.09.2024**: 
-- [Projekt 1](https://luki20091.github.io/Web/13.09.2024/projekt1.html)
+**Zadania 06.09.2024**: 
+- [Zad 3](https://luki20091.github.io/Web/06.09.2024/zad3.html)
