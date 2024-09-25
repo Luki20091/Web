@@ -1,0 +1,33 @@
+body {
+    background-color: #f8f9fa;
+}
+.navbar {
+    margin-bottom: 20px;
+}
+.hero {
+    background: url('../images/1.jpg') no-repeat center center;
+    background-size: cover;
+    height: 400px;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+.hero h1 {
+    font-size: 4rem;
+    margin-top: 70px;
+}
+.content {
+    padding: 20px;
+}
+.footer {
+    background-color: #343a40;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+}
+.news img {
+    width: 100%;
+    height: auto;
+}
