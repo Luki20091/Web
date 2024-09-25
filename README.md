@@ -1,5 +1,9 @@
 # Web - szkolne zadania/projekty
 
+**Projekt 25.09.2024**: 
+- [Projekt 2](https://luki20091.github.io/Web/25.09.2024/IBM.html)
+
+
 **Projekt 18.09.2024**: 
 - [Projekt 2](https://luki20091.github.io/Web/18.09.2024/projekt2.html)
 
