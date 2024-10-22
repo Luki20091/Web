@@ -1,13 +1,16 @@
 body {
-    background-color: #f8f9fa;
+    background-color: black;
+    color: white;
 }
 .navbar {
     margin-bottom: 20px;
+    height: 60px;
 }
 .hero {
-    background: url('../images/1.jpg') no-repeat center center;
+    margin-top: -80px;
+    background: url('../images/test2.jpg') no-repeat center center;
     background-size: cover;
-    height: 400px;
+    height: 100vh;
     color: white;
     display: flex;
     align-items: center;
@@ -22,7 +25,6 @@ body {
     padding: 20px;
 }
 .footer {
-    background-color: #343a40;
     color: white;
     padding: 20px 0;
     text-align: center;
@@ -30,4 +32,27 @@ body {
 .news img {
     width: 100%;
     height: auto;
+}
+
+
+p, li {
+    color: rgba(255, 255, 255, 0.55);
+}
+
+
+.blockquote-footer, label {
+    margin-top: 20px;
+    color: rgba(255, 255, 255, 0.55);
+}
+
+
+
+.row {
+    margin-bottom: 50px;
+}
+
+
+
+h3{
+    margin: 15px 0;
 }
