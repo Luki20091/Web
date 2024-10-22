@@ -1,7 +1,7 @@
 # Web - szkolne zadania/projekty
 
 **Projekt 25.09.2024**: 
-- [Projekt NBA](https://luki20091.github.io/Web/25.09.2024/NBA.html)
+- [Projekt NBA](https://luki20091.github.io/Web/25.09.2024/index.html)
 
 
 **Projekt 18.09.2024**: 
