@@ -1,0 +1,13 @@
+#effect-container {
+    text-align: center;
+    margin-top: 50px;
+}
+
+#box {
+    width: 100px;
+    height: 100px;
+    background-color: blue;
+    margin: 20px auto;
+    position: relative;
+}
+
