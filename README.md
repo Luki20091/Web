@@ -1,8 +1,10 @@
 # Web - szkolne zadania/projekty
 
+**Zadania 08.11.2024**: 
+- [Zad 1](https://luki20091.github.io/Web/08.11.2024/index.html)
+
 **Projekt 25.09.2024**: 
 - [Projekt NBA](https://luki20091.github.io/Web/25.09.2024/index.html)
-
 
 **Projekt 18.09.2024**: 
 - [Projekt 2](https://luki20091.github.io/Web/18.09.2024/projekt2.html)
