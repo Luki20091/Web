@@ -1,29 +1,49 @@
-
-<!--
-	ooooo        ooooo     ooo oooo    oooo ooooo
-	`888'        `888'     `8' `888   .8P'  `888'
-	 888          888       8   888  d8'     888
-	 888          888       8   88888[       888
-	 888          888       8   888`88b.     888
-	 888       o  `88.    .8'   888  `88b.   888
-	o888ooooood8    `YbodP'    o888o  o888o o888o
--->
 <?php
 session_start();
 require_once 'config.php';
+
+// Połączenie z bazą danych
+$conn = new mysqli($servername, $dbusername, $dbpassword);
+
+// Sprawdzanie połączenia
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+
+// Tworzenie bazy danych, jeśli nie istnieje
+$sql = "CREATE DATABASE IF NOT EXISTS $dbname";
+if ($conn->query($sql) === FALSE) {
+    die("Error creating database: " . $conn->error);
+}
+
+// Wybór bazy danych
+$conn->select_db($dbname);
+
+// Tworzenie tabeli 'users', jeśli nie istnieje
+$sql = "CREATE TABLE IF NOT EXISTS users (
+    id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    username VARCHAR(255) NOT NULL UNIQUE,
+    password VARCHAR(255) NOT NULL,
+    reg_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+)";
+if ($conn->query($sql) === FALSE) {
+    die("Error creating table: " . $conn->error);
+}
+
+// Tworzenie użytkownika admin, jeśli nie istnieje
+$sql = "SELECT * FROM users WHERE username = 'admin'";
+$result = $conn->query($sql);
+if ($result->num_rows == 0) {
+    $sql = "INSERT INTO users (username, password) VALUES ('admin', 'admin1')";
+    if ($conn->query($sql) === FALSE) {
+        die("Error creating admin: " . $conn->error);
+    }
+}
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $username = htmlspecialchars($_POST['username']);
     $password = htmlspecialchars($_POST['password']);
     
-    // Połączenie z bazą danych
-    $conn = new mysqli($servername, $dbusername, $dbpassword, $dbname);
-
-    // Sprawdzanie połączenia
-    if ($conn->connect_error) {
-        die("Connection failed: " . $conn->connect_error);
-    }
-
     // Sprawdzenie użytkownika w bazie danych
     $sql = "SELECT * FROM users WHERE username = ?";
     $stmt = $conn->prepare($sql);
@@ -33,7 +53,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     
     if ($result->num_rows > 0) {
         $row = $result->fetch_assoc();
-        if (password_verify($password, $row['password'])) {
+        if ($password == $row['password']) {
             $_SESSION['username'] = $username;
             header('Location: admin.php');
             exit();
@@ -45,8 +65,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     }
     
     $stmt->close();
-    $conn->close();
 }
+
+$conn->close();
 ?>
 
 <!DOCTYPE html>

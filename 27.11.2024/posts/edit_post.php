@@ -1,13 +1,3 @@
-
-<!--
-	ooooo        ooooo     ooo oooo    oooo ooooo
-	`888'        `888'     `8' `888   .8P'  `888'
-	 888          888       8   888  d8'     888
-	 888          888       8   88888[       888
-	 888          888       8   888`88b.     888
-	 888       o  `88.    .8'   888  `88b.   888
-	o888ooooood8    `YbodP'    o888o  o888o o888o
--->
 <?php
 session_start();
 if (!isset($_SESSION['username'])) {
@@ -40,18 +30,19 @@ if ($conn->connect_error) {
 $post = getPostById($_GET['id'], $conn);
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    $title = htmlspecialchars($_POST['title']);
-    $content = htmlspecialchars($_POST['content']);
+    if (isset($_POST['edit'])) {
+        $title = htmlspecialchars($_POST['title']);
+        $content = htmlspecialchars($_POST['content']);
     
-    // Aktualizacja postu w bazie danych
-    $sql = "UPDATE posts SET title = ?, content = ? WHERE id = ?";
-    $stmt = $conn->prepare($sql);
-    $stmt->bind_param("ssi", $title, $content, $_GET['id']);
-    $stmt->execute();
+        // Aktualizacja postu w bazie danych
+        $sql = "UPDATE posts SET title = ?, content = ? WHERE id = ?";
+        $stmt = $conn->prepare($sql);
+        $stmt->bind_param("ssi", $title, $content, $_GET['id']);
+        $stmt->execute();
     
-    $stmt->close();
-    $conn->close();
-
+        $stmt->close();
+        $conn->close();
+    }
     header('Location: ../admin.php');
     exit();
 }
@@ -77,7 +68,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 <label for="content">Treść:</label>
                 <textarea id="content" name="content" required><?php echo $post['content']; ?></textarea>
             </div>
-            <button type="submit">Zaktualizuj</button>
+            <button name="edit" type="submit">Zaktualizuj</button>
+            <button name="discard" type="submit">Anuluj</button>
         </form>
     </div>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>

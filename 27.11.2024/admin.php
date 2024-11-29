@@ -45,6 +45,7 @@ $conn->close();
     <div class="container">
         <h1>Panel Administracyjny</h1>
         <p><a href="logout.php">Wyloguj się</a></p>
+        <p><a href="index.php">Strona główna</a></p>
         <h2>Posty</h2>
         <p><a href="posts/add_post.php">Dodaj nowy post</a></p>
         <ul>

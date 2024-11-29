@@ -29,10 +29,13 @@ label {
 input[type="text"],
 input[type="password"],
 textarea {
-    width: 100%;
+    width: 98%;
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 4px;
+    max-width: 98%;
+    min-width: 98%;
+    min-height: min-content;
 }
 
 button {
@@ -52,4 +55,10 @@ button:hover {
 .error {
     color: red;
     margin-bottom: 10px;
+}
+
+
+
+ul > li {
+    padding-bottom: 20px;
 }
