@@ -87,17 +87,17 @@ $conn->close();
         <form id="loginForm" action="login.php" method="post">
             <div class="form-group">
                 <label for="username">Nazwa użytkownika:</label>
-                <input type="text" id="username" name="username" required>
+                <input type="text" id="username" minlength=5 name="username" placeholder="admin" required>
             </div>
             <div class="form-group">
                 <label for="password">Hasło:</label>
-                <input type="password" id="password" name="password" required>
+                <input type="password" id="password" minlength=6 name="password" placeholder="admin1"  required>
             </div>
             <button type="submit">Zaloguj się</button>
         </form>
     </div>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/jquery.validation/1.19.3/jquery.validate.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.min.js"> </script>  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.0/jquery.validate.min.js"> </script> 
     <script>
     $(document).ready(function () {
         $("#loginForm").validate({

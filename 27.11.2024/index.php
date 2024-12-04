@@ -70,7 +70,7 @@ $conn->close();
         <ul>
         <?php if ($result->num_rows > 0): ?>
             <?php while($row = $result->fetch_assoc()): ?>
-                <li><strong><?php echo $row['title']; ?></strong><br><?php echo $row['content']; ?></li>
+                <li><strong><?php echo $row['title']; ?></strong><br><p><?php echo $row['content']; ?></p></li>
             <?php endwhile; ?>
         <?php else: ?>
             <li>Brak postów</li>

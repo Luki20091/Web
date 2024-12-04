@@ -62,39 +62,43 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         <form id="editPostForm" action="edit_post.php?id=<?php echo $_GET['id']; ?>" method="post">
             <div class="form-group">
                 <label for="title">Tytuł:</label>
-                <input type="text" id="title" name="title" value="<?php echo $post['title']; ?>" required>
+                <input type="text" id="title" name="title" minlength=3 value="<?php echo $post['title']; ?>" required>
             </div>
             <div class="form-group">
                 <label for="content">Treść:</label>
-                <textarea id="content" name="content" required><?php echo $post['content']; ?></textarea>
+                <textarea id="content" name="content" minlength=10 required><?php echo $post['content']; ?></textarea>
             </div>
             <button name="edit" type="submit">Zaktualizuj</button>
             <button name="discard" type="submit">Anuluj</button>
         </form>
     </div>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/jquery.validation/1.19.3/jquery.validate.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.min.js"> </script>  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.0/jquery.validate.min.js"> </script> 
     <script>
     $(document).ready(function () {
         $("#editPostForm").validate({
             rules: {
                 title: {
                     required: true,
-                    minlength: 3
+                    minlength: 3,
+                    maxlength: 50
                 },
                 content: {
                     required: true,
-                    minlength: 10
+                    minlength: 10,
+                    maxlength: 500
                 }
             },
             messages: {
                 title: {
                     required: "Proszę wprowadzić tytuł",
-                    minlength: "Tytuł musi mieć co najmniej 3 znaki"
+                    minlength: "Tytuł musi mieć co najmniej 3 znaki",
+                    maxlength: "Tytuł może miec najwyżej 50 znaków"
                 },
                 content: {
                     required: "Proszę wprowadzić treść",
-                    minlength: "Treść musi mieć co najmniej 10 znaków"
+                    minlength: "Treść musi mieć co najmniej 10 znaków",
+                    maxlength: "Treść może miec najwyżej 500 znaków"
                 }
             },
             errorPlacement: function (error, element) {
