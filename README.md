@@ -1,7 +1,7 @@
 # Web - szkolne zadania/projekty
 
 **projekt 27.11.2024**: 
-- [Projekt Validate](https://luki20091.github.io/Web/)
+- [Projekt Validate](https://github.com/Luki20091/Web/tree/main/27.11.2024)
   
 **Zadania 08.11.2024**: 
 - [Zad 1](https://luki20091.github.io/Web/08.11.2024/index.html)
